@@ -24,6 +24,12 @@ Date	Who	    Start	Stop	Interruption	Question	TimeOnTask		Comments
 
 --------------------------------committing to git: 09/07 23:57--------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
+9/8    VN          16:03	16:20			6		   17			Question 6 over
+9/8    VN	   16:20	16:39	   5		7		   14			Question 7 over.Got Interrupted by doorbell
+9/8    VN	   16:40	16:47			8		   7			Question 8 done
+9/8    VN	   16:47        16:58			9		   11			Thought for some time..then skipped
+---------------------------------committing to git : 17:19--------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
 
 
 
@@ -32,9 +38,14 @@ Total TimeOnTask Q2 (minutes)		17
 Total TimeOnTask Q3 (minutes)		5
 Total TimeOnTask Q4 (minutes)           3 
 Total TimeOnTask Q5 (minutes)           8 
+Total TimeOnTask Q6 (minutes)           17
+Total TimeOnTask Q7 (minutes)           14
+Total TimeOnTask Q8 (minutes)           11
 
 Total TimeOnTask Q1 (hours and tenths)	0.3
 Total TimeOnTask Q2 (hours and tenths)	0.2
 Total TimeOnTask Q3 (hours and tenths)  0.0
 Total TimeOnTask Q4 (hours and tenths)  0.0
-Total TimeOnTask Q5 (hours and tenths)  0.1
+Total TimeOnTask Q6 (hours and tenths)  0.2
+Total TimeOnTask Q7 (hours and tenths)  0.2
+Total TimeOnTask Q8 (hours and tenths)  0.1
