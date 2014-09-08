@@ -33,3 +33,8 @@ Total TimeOnTask Q3 (minutes)		5
 Total TimeOnTask Q4 (minutes)           3 
 Total TimeOnTask Q5 (minutes)           8 
 
+Total TimeOnTask Q1 (hours and tenths)	0.3
+Total TimeOnTask Q2 (hours and tenths)	0.2
+Total TimeOnTask Q3 (hours and tenths)  0.0
+Total TimeOnTask Q4 (hours and tenths)  0.0
+Total TimeOnTask Q5 (hours and tenths)  0.1
