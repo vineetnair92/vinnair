@@ -1,0 +1,15 @@
+Laptop Preparation
+
+Date	Who	    Start	Stop	Interruption	Question	TimeOnTask		Comments
+8/31	VN	    18:15	18:20			  		   05			Sign up for CCIS account
+9/6	VN	    15:00	15:10					   10 		        Install Racket
+9/6	VN	    15:15	15:20					   05			Signed up for Github
+
+---------------------------committing to git: 09/07   22:28--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Total TimeOnTask Q1 (minutes)		5
+Total TimeOnTask Q2 (minutes)		10
+Total TimeOnTask Q3 (minutes)		5
