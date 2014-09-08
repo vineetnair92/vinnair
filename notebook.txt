@@ -16,14 +16,20 @@ Date	Who	    Start	Stop	Interruption	Question	TimeOnTask		Comments
 ---------------------------committing to git: 09/07   23:11---------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------------------------------------------------------------------
 	
+9/7 	VN 	   23:13	23:18			1 		    5			Realised something went wrong in Q1.Corrected it.
+9/7	VN	   23:18	23:30			2		   12			Realised something went wrong in Q2.Corrected it.		
+9/7     VN 	   23:35	23:40  			3		    5			Q3 Done after a little hiccup.
+9/7	VN	   23:41	23:44			4		    3			Q4 Easily done	
+9/7	VN         23:44        23:52                   5                   8                   Q5 Done.        	   
+
+--------------------------------committing to git: 09/07 23:57--------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
-
-
-
-Total TimeOnTask Q1 (minutes)		5
-Total TimeOnTask Q2 (minutes)		10
+Total TimeOnTask Q1 (minutes)		18
+Total TimeOnTask Q2 (minutes)		17
 Total TimeOnTask Q3 (minutes)		5
-
+Total TimeOnTask Q4 (minutes)           3 
+Total TimeOnTask Q5 (minutes)           8 
 
