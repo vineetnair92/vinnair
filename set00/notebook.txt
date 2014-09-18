@@ -1,0 +1,51 @@
+Laptop Preparation
+
+Date	Who	    Start	Stop	Interruption	Question	TimeOnTask		Comments
+8/31	VN	    18:15	18:20			  		   05			Sign up for CCIS account
+9/6	VN	    15:00	15:10					   10 		        Install Racket
+9/6	VN	    15:15	15:20					   05			Signed up for Github
+
+---------------------------committing to git: 09/07   22:28--------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+  
+9/7	VN	    22:44	22:57       5		  1                 13			Question 1 completed. Talked to Rizwan in between
+9/7	VN	    23:03	23:08		          2		     5                  Question 2 also done.
+
+---------------------------committing to git: 09/07   23:11---------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------
+	
+9/7 	VN 	   23:13	23:18			1 		    5			Realised something went wrong in Q1.Corrected it.
+9/7	VN	   23:18	23:30			2		   12			Realised something went wrong in Q2.Corrected it.		
+9/7     VN 	   23:35	23:40  			3		    5			Q3 Done after a little hiccup.
+9/7	VN	   23:41	23:44			4		    3			Q4 Easily done	
+9/7	VN         23:44        23:52                   5                   8                   Q5 Done.        	   
+
+--------------------------------committing to git: 09/07 23:57--------------------------------------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+9/8    VN          16:03	16:20			6		   17			Question 6 over
+9/8    VN	   16:20	16:39	   5		7		   14			Question 7 over.Got Interrupted by doorbell
+9/8    VN	   16:40	16:47			8		   7			Question 8 done
+9/8    VN	   16:47        16:58			9		   11			Thought for some time..then skipped
+---------------------------------committing to git : 17:19--------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------	
+
+
+
+Total TimeOnTask Q1 (minutes)		18
+Total TimeOnTask Q2 (minutes)		17
+Total TimeOnTask Q3 (minutes)		5
+Total TimeOnTask Q4 (minutes)           3 
+Total TimeOnTask Q5 (minutes)           8 
+Total TimeOnTask Q6 (minutes)           17
+Total TimeOnTask Q7 (minutes)           14
+Total TimeOnTask Q8 (minutes)           11
+
+Total TimeOnTask Q1 (hours and tenths)	0.3
+Total TimeOnTask Q2 (hours and tenths)	0.2
+Total TimeOnTask Q3 (hours and tenths)  0.0
+Total TimeOnTask Q4 (hours and tenths)  0.0
+Total TimeOnTask Q6 (hours and tenths)  0.2
+Total TimeOnTask Q7 (hours and tenths)  0.2
+Total TimeOnTask Q8 (hours and tenths)  0.1
