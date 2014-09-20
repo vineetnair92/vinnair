@@ -23,6 +23,19 @@
 ; -- "east"
 ; -- "west"
 
+(define north-dir "north")
+(define south-dir "south")
+(define east-dir "east")
+(define west-dir "west")
+
+;;TEMPLATE
+;; dir-fn : Robot -> ??
+;; (define (dir-fn r)
+;;  (cond
+;;    [(string=? r "north")...]
+;;   [(string=?  r  "south")...]
+;;   [(string=?  r  "east")...]
+;;    [(string=? r "west")...]))
 
 ; x and y are scalar data representing the coordinates of the robot
 ; len and breadth are scalar data representing the coordinates of the room
@@ -76,15 +89,16 @@
 
 ; STRATEGY:
 ; Function Composition
- 
- (define (initial-robot x y)
-   ( make-robot x
-       y
-   (robot-direction "north")
-  ( robot-radius rad)))
 
- ;(begin-for-test
- ;  (check-equal? (initial-robot 50 60) (make-robot 50 60 "north" 15)))
+ (define (initial-robot x y)
+   ( make-robot
+      x
+      y
+     "north"
+      rad))
+
+ (begin-for-test
+   (check-equal? (initial-robot 50 60) (make-robot 50 60 "north" 15)))
 
  
 
@@ -96,27 +110,53 @@
  
 ; STRATEGY:
 ; STRUCTURAL DECOMPOSITION
+; Helper Function
+ 
+ (define (dir-left dir)
+   (cond
+     [(string=? (robot-direction dir) "south")"east"]
+     [(string=? (robot-direction dir) "north")"west"]
+     [(string=? (robot-direction dir) "east")"south"]
+     [(string=? (robot-direction dir) "west")"north"]))
+  
 
  (define (robot-left r)
-   (cond
-     [(= (robot-direction "east" )"east")(robot-direction "south")]
-     [(= (robot-direction "west") "west")(robot-direction "north")]
-     [(= (robot-direction "north") "north")(robot-direction "east")] 
-     [(= (robot-direction "south")"south")(robot-direction "west")]))
+   ( make-robot
+     (robot-x r)
+     (robot-y r )
+     (dir-left r)
+    ( robot-radius r)))
+     
  
-; (begin-for-test
-;  ( check-equal? (robot-left (make-robot 10 20 "east" 15)) "north")"false")
+ (begin-for-test
+  ( check-equal? (robot-left (make-robot 10 20 "south" 15)) (make-robot 10 20 "east" 15))
+  ( check-equal? (robot-left (make-robot 10 20 "north" 15)) (make-robot 10 20 "west" 15))
+  ( check-equal? (robot-left (make-robot 10 20 "west" 15)) (make-robot 10 20 "north" 15))
+  ( check-equal? (robot-left (make-robot 10 20 "east" 15)) (make-robot 10 20 "south" 15)))
 
  
+ 
+  (define(dir-right dir)
+    (cond
+      [(string=? (robot-direction dir) "south")"west"]
+      [(string=? (robot-direction dir) "north")"east"]
+      [(string=? (robot-direction dir) "east")"north"]
+      [(string=? (robot-direction dir) "west")"south"]))
  
 
   (define (robot-right r)
-       (cond
-         [(=(robot-direction "east")"east")(robot-direction "south")]
-         [(=(robot-direction "west") "west")(robot-direction "north")]
-         [(=(robot-direction "north") "north")(robot-direction "east")]
-         [(=(robot-direction "south")"south")(robot-direction "west")]))
-        
+       (make-robot
+        (robot-x r)
+        (robot-y r)
+        (dir-right r)
+        (robot-radius r)))
+ 
+ (begin-for-test
+  ( check-equal? (robot-right (make-robot 10 20 "south" 15)) (make-robot 10 20 "west" 15))
+  ( check-equal? (robot-right (make-robot 10 20 "north" 15)) (make-robot 10 20 "east" 15))
+  ( check-equal? (robot-right (make-robot 10 20 "west" 15)) (make-robot 10 20 "south" 15))
+  ( check-equal? (robot-right (make-robot 10 20 "east" 15)) (make-robot 10 20 "north" 15)))
+
  
 ; robot-forward : Robot PosInt -> Robot
 ; GIVEN: a robot and a distance
@@ -126,14 +166,34 @@
 ; the room to being even partially outside the canvas,
 ; then the robot should stop at the wall.
 
-   ; (define (robot-forward r dist)
-   ;   (cond
-   ;    [
-          
+  #;  (define (robot-forward r dist)
+       (make-robot
+        r
+        r
+        r
+        r)
+      (if(= (dir-check r-x r-y dist) true)(change-dir r-x r-y dist)))
+    
+   #; (define (dir-check r-x r-y dist)
+      
+        (if(< r-x 400) (and (< r-y 200))(going-outside? r-x r-y dist) (coming-inside? r-x r-y dist)))
+   
+   
+    
+    
+       
+;              
 ; robot-north? : Robot -> Boolean
 ; robot-south? : Robot -> Boolean
 ; robot-east? : Robot -> Boolean
 ; robot-west? : Robot -> Boolean
 ; GIVEN: a robot
 ; ANSWERS: whether the robot is facing in the specified direction.
+  
+  ;(define (robot-north? r)
+  ;  (make-robot
+  ;   r
+  ;   r
+  ;   (if (= r "north")true false)
+  ;   r))
  
