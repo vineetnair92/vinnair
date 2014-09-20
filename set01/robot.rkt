@@ -6,8 +6,8 @@
 
 (provide
   initial-robot
-  robot-left )
-;  robot-right)
+  robot-left 
+  robot-right)
 ;  robot-forward
 ;  robot-north? 
 ;  robot-south? 
@@ -89,16 +89,15 @@
 
 ; STRATEGY:
 ; Function Composition
-
  (define (initial-robot x y)
    ( make-robot
       x
       y
      "north"
       rad))
-
+ 
  (begin-for-test
-   (check-equal? (initial-robot 50 60) (make-robot 50 60 "north" 15)))
+   (check-equal? (initial-robot 50 60)(make-robot 50 60 "north" 15)))
 
  
 
@@ -190,10 +189,44 @@
 ; GIVEN: a robot
 ; ANSWERS: whether the robot is facing in the specified direction.
   
-  ;(define (robot-north? r)
-  ;  (make-robot
-  ;   r
-  ;   r
-  ;   (if (= r "north")true false)
-  ;   r))
+  (define (robot-north? r)
+    (make-robot
+    (robot-x r)
+    (robot-y r)
+    (dir-check r)
+    (robot-radius r)))
+
+  (define (robot-south? r)
+    (make-robot
+    (robot-x r)
+    (robot-y r)
+    (dir-check r)
+    (robot-radius r)))
+
+  (define (robot-east? r)
+    (make-robot
+    (robot-x r)
+    (robot-y r)
+    (dir-check r)
+    (robot-radius r)))
+
+(define (robot-west? r)
+    (make-robot
+    (robot-x r)
+    (robot-y r)
+    (dir-check r)
+    (robot-radius r)))
+
+  
+  (define(dir-check dir)
+    (cond
+      [(string=? (robot-direction dir) "south")"south"]
+      [(string=? (robot-direction dir) "north")"north"]
+      [(string=? (robot-direction dir) "east")"east"]
+      [(string=? (robot-direction dir) "west") "west"]))
  
+ (begin-for-test
+   ( check-equal? (robot-north? (make-robot 10 20 "north" 15)) (make-robot 10 20 "north" 15))
+   ( check-equal? (robot-south? (make-robot 10 20 "east" 15)) (make-robot 10 20 "east" 15))
+   (check-equal? (robot-east?   (make-robot 10 20 "south" 15)) (make-robot 10 20 "south" 15))
+   ( check-equal? (robot-west?  (make-robot 10 20 "west" 15)) (make-robot 10 20 "west" 15)))
