@@ -6,9 +6,11 @@
 (require 2htdp/universe)
 
 
-#; (provide
+ (provide
     edit
-    )
+    make-editor
+    editor-pre
+    editor-post)
 
 ; DATA DEFINITIONS
 ; A KeyEvent is one of:
@@ -32,28 +34,71 @@
 ;          the character to the left of cursor
 
 (define (edit e ke)
-  (make-editor
-   (editor-pre e)
-   (check-event e ke)))
+  ;(make-editor
+   (check-event e ke))
+   ;(editor-post e)))
+
+(begin-for-test
+  ( check-equal? (edit (make-editor "qwe" "as") "R") (make-editor "qweR" "as"))
+  (check-equal? (edit (make-editor "qwe" "srt") "left") (make-editor "qw" "esrt")) 
+  (check-equal? (edit (make-editor "qwe" "ter") "right") (make-editor "qwet" "er"))
+(check-equal? (edit (make-editor "qwe" "ter") "\b") (make-editor "qw" "ter"))
+(check-equal? (edit (make-editor "qwe" "ter") "\t") (make-editor "qwe" "ter"))
+(check-equal? (edit (make-editor "qwe" "ter") "\u007F") (make-editor "qwe" "ter")))
 
 
+         
+         
 (define (check-event e ke)
   (cond
     [(= (string-length ke) 1) (check-add? e ke)]
-    ))
+    [(string=? "left" ke)(move-left e ke) ]
+    [(string=? "right" ke)(move-right e ke)]))
 
 
 
 (define (check-add? e ke)
   (cond
-    [( key=? ke "\t" ) (editor-post e)]
-    [(key=? ke "\u007F") (editor-post e)]
-;    [(key=? ke "\b") (delete-letter e)]
+    [( key=? ke "\t" ) (make-editor (editor-pre e)(editor-post e))]
+    [(key=? ke "\u007F") (make-editor (editor-pre e)(editor-post e))]
+    [(key=? ke "\b") (delete-letter e ke)]
     [else (add-to-pre e ke ) ]))
 
 
-
 (define (add-to-pre e ke)
-  ( make-editor (+ (editor-pre e)(editor-post e))
-                ""))
+  (make-editor
+(string-append(editor-pre e) ke)
+   (editor-post e)))             
+
+(define (delete-letter e ke)
+  (cond
+    [(= (string-length (editor-pre e))0 )"No elements to delete" ]
+   ( else(make-editor  (string-rest e ke) (editor-post e)))))
+
+
+(define (move-left e ke)
+  (cond
+    [(= (string-length (editor-pre e)) 0 )"Cannot move further as cursor is at first" ]
+    (else (make-editor(string-rest e ke) (string-append (string-last e ke)(editor-post e)))))
+  )
+
+ (define (move-right e ke)
+  (cond
+    [(= (string-length (editor-pre e))0 )"Cannot move right as no cursor is at last" ]
+    (else (make-editor (string-append (editor-pre e)(string-first e ke)) (string-rest e ke)))
+  ))
+ 
+ (define (string-last e ke)
+   (string-ith (editor-pre e) (-(string-length (editor-pre e))1 )))
+ 
+ (define (string-first e ke)
+   (string-ith (editor-post e) 0))
+ 
+ (define(string-rest e ke)
+   (cond
+     [(key=? ke "left") (substring (editor-pre e) 0 (-(string-length (editor-pre e)) 1))]
+     [(key=? ke "right") (substring (editor-post e) 1 (string-length (editor-post e)))]
+   (else  (substring (editor-pre e) 0 (-(string-length (editor-pre e)) 1)))))
+ 
+ 
 
